@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1582546092 source:d:\acm程序\c++学习\cpp程序\main.cpp
+	<iostream>
+	<algorithm>
+	"vector"
+	"compare.h"
+
+1582541805 d:\acm程序\c++学习\cpp程序\compare.h
+

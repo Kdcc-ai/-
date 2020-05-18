@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1582723957 source:d:\acm程序\算法设计与分析测验2\main.c
+	<stdio.h>
+	<stdlib.h>
+

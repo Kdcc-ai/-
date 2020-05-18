@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1582702473 source:d:\acm程序\两个升序序列变成一个升序序列\main.c
+	<stdio.h>
+	<stdlib.h>
+

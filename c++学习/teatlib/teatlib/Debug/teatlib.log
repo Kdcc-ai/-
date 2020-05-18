@@ -1,0 +1,7 @@
+﻿  display.cpp
+d:\c++  codeblcoks\c++学习\teatlib\teatlib\display.cpp(7): error C2039: “cout”: 不是“std”的成员
+  d:\c++  codeblcoks\c++学习\teatlib\teatlib\predefined c++ types (compiler internal)(256): note: 参见“std”的声明
+d:\c++  codeblcoks\c++学习\teatlib\teatlib\display.cpp(7): error C2065: “cout”: 未声明的标识符
+d:\c++  codeblcoks\c++学习\teatlib\teatlib\display.cpp(7): error C2039: “endl”: 不是“std”的成员
+  d:\c++  codeblcoks\c++学习\teatlib\teatlib\predefined c++ types (compiler internal)(256): note: 参见“std”的声明
+d:\c++  codeblcoks\c++学习\teatlib\teatlib\display.cpp(7): error C2065: “endl”: 未声明的标识符

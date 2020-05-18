@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1582549455 source:d:\acm程序\c++学习\集合 链表\main.cpp
+	<iostream>
+	<string.h>
+	<stdlib.h>
+	"Set.h"
+
+1582549250 d:\acm程序\c++学习\集合 链表\set.h
+

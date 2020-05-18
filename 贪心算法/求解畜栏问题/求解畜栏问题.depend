@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1587651109 source:d:\c++  codeblcoks\贪心算法\求解畜栏问题\main.cpp
+	<iostream>
+	<cstring>
+	<algorithm>
+

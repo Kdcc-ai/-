@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1581054869 source:d:\c++  codeblcoks\4.more is better\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+

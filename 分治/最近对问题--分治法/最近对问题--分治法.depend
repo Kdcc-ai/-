@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1584087603 source:d:\c++  codeblcoks\最近对问题--分治法\main.cpp
+	<iostream>
+	<cmath>
+	<algorithm>
+

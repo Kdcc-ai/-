@@ -1,0 +1,133 @@
+﻿#include <stdio.h>
+#include <stdlib.h>
+#define INF 32767
+typedef struct Mgraph{
+    char V[100][100];         //顶点编号
+    int edges[100][100];
+    char name[100][100];
+    int n;        //图中顶点个数
+}graph;
+typedef struct{
+int u;    //边的起始顶点
+int v;    //边的终止顶点
+int w;    //边的权值
+}Edge;
+//Kruscal算法运用并查集思想：易
+void Kruskal(graph g)
+{   int i,j,v1,u1,sn1,sn2,k;
+    int vset[100];          //标记数组
+    Edge E[100],t;         //存放所有边
+    k=1;                  //边的编号从1开始
+    for(i=1;i<=g.n;i++)
+        for(j=1;j<=g.n;j++)
+            if(g.edges[i][j]!=0&&g.edges[i][j]!=INF)
+    {       E[k].u=i; E[k].v=j; E[k].w=g.edges[i][j];
+            k++;
+    }
+    for(i=0;i<k-1;i++)           //k为待排元素数量
+    for(j=0;j<k-1-i;j++)
+    if(E[j].w>E[j+1].w)                 //冒泡排序法对边按权值进行排序
+     {  t=E[j];E[j]=E[j+1];E[j+1]=t;
+
+     }
+   for(i=1;i<=g.n;i++)
+        vset[i]=i;
+    k=1; j=1;         //k表示当前生成的是第几条边，j表示E的下标.
+    while(k<g.n)      //这里千万不能加=号，因为n个顶点生成n-1个边
+    {  u1=E[j].u;
+       v1=E[j].v;
+       sn1=vset[u1];
+       sn2=vset[v1];
+       if(sn1!=sn2)
+       {printf("边(%d,%d)的权值为：%d\n",u1,v1,E[j].w);
+        k++;
+        for(i=1;i<=g.n;i++)
+            if(vset[i]==sn2)   //不可缺少，两个集合统一编号。
+            vset[i]=sn1;
+       }
+       j++;
+    }
+
+
+}
+void Prim(graph g,int v)
+{   int lowcost[100];
+    int closest[100];    //colsest[i]表示与i边相连的前一个边是XX。
+    int i,j,k,min;
+    for(i=1;i<=g.n;i++)
+    { lowcost[i]=g.edges[v][i];
+        closest[i]=v;
+        lowcost[v]=0;    //之前忽略的点，自己模拟运算过程，找出来的错误。
+    }
+    for(i=1;i<g.n;i++)        //输出n-1条边
+    { min=INF;
+        for(j=1;j<=g.n;j++)
+        if(lowcost[j]!=0&&lowcost[j]<min)
+        {  min=lowcost[j];
+            k=j;   //   K记录最近点编号,即刚加入U的顶点。
+        }
+        printf("边(%s,%s)的权值为：%d\n",g.name[closest[k]],g.name[k],lowcost[k]); //一轮j循环结束后，执行
+这两行语句
+        lowcost[k]=0;                         //lowcost[k]置为0，表示将K点加入U集合
+
+      for(j=1;j<=g.n;j++) //修改数组lowcost和closest的值
+         { if(lowcost[j]!=0&&g.edges[k][j]<lowcost[j])
+             lowcost[j]=g.edges[k][j];
+             closest[j]=k;
+         }
+
+    }
+}
+int main()
+{   int number=INF,i=1,count;
+    graph g;
+   while(number!=0)
+  { printf("城市信息输入请按1\n");
+    printf("城市间距离编辑请按2\n");
+    printf("采用Prim算法进行通信网的构建请按3\n");
+    printf("采用Kruskal算法进行通信网的构建请按4\n");
+    printf("退出请按0\n");
+    scanf("%d",&number);
+
+    if(number==1)
+   {   printf("请输入你想输入的城市信息个数\n");
+       scanf("%d",&g.n);
+       count=g.n;
+       while(count--)
+       {
+           printf("请输入城市编号和城市名称：\n");
+           scanf("%s %s",g.V[i],g.name[i]);
+           i++;
+       }
+       printf("城市信息录入完成\n\n");
+   }
+   if(number==2)
+   { int a,b,c,j;
+        for(i=1;i<=g.n;i++)
+        for(j=1;j<=g.n;j++)
+         {g.edges[i][j]=INF;
+         }
+         for(i=1;i<=g.n;i++)
+        for(j=1;j<=g.n;j++)
+         {g.edges[i][j]=INF;
+         }
+
+
+       printf("请输入你想录入的信息个数\n");
+       scanf("%d",&count);
+        while(count--)
+        { printf("请输入城市编号和它们之间的距离");
+            scanf("%d %d %d",&a,&b,&c);
+            g.edges[a][b]=g.edges[b][a]=c;
+        }
+
+   }
+   if(number==3)
+    Prim(g,1);
+
+   if(number==4)
+    Kruskal(g);
+
+  }
+    return 0;
+}

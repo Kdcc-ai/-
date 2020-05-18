@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1584274244 source:d:\c++  codeblcoks\分治\二分法2\main.cpp
+	<iostream>
+	<cmath>
+	<vector>
+

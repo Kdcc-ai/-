@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1581051509 source:d:\c++  codeblcoks\3.is it a tree\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

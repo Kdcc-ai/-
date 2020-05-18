@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1586925582 source:d:\c++  codeblcoks\动态规划\新水果取名\main.cpp
+	<iostream>
+	<stdio.h>
+	<cstring>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1583216000 source:d:\计费管理系统3\消费信息文件\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
